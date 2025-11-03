@@ -1,0 +1,566 @@
+﻿@page
+@model Riviana.Pages.PreStartChecksMixingAreaModel
+@{
+    ViewData["Title"] = "Pre Start Checks Mixing Area";
+}
+<!--begin::Container-->
+<div class="container-fluid">
+    <!--begin::Row-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary card-outline mb-4">
+                <div class="card-header">
+                    <table class="table table-bordered">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th rowspan="2">
+                                    <div class="d-flex justify-content-center align-items-center" style="height:100%;">
+                                        <img src="~/assets/img/riviana_logo.svg" height="60" alt="Logo" />
+                                    </div>
+                                </th>
+                                <th>Procedure</th>
+                                <th colspan="4">Pre-Start Up Checks - Mixing Area</th>
+                            </tr>
+                            <tr>
+
+                                <td>Document/Form No:</td>
+                                <td>F701</td>
+                                <td>Issue Date:</td>
+                                <td>07/03/2025</td>
+                                <td>Page 1 of 2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <h2 class="card-title text-uppercase fw-bold">PreStart Up Checks - Mixing Area</h2>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-text">Date</span>
+                                <input type="date" class="form-control" id="inpDate" />
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group col-sm-2">
+                                <span class="input-group-text">Time Start</span>
+                                <input type="time" class="form-control" id="inpTimeStart" />
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group col-sm-2">
+                                <span class="input-group-text">Time Finish</span>
+                                <input type="time" class="form-control" id="inpTimeFinish" />
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group col-sm-2">
+                                <span class="input-group-text">Team Leader</span>
+                                <input type="text" class="form-control" id="inpTeamLeader" />
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="bg-body-secondary" style="width: 10px">Equipment</th>
+                                <th class="bg-body-secondary">Clean</br>(Pass/Failed)</th>
+                                <th class="bg-body-secondary">Foreign</br>Objects</br>Found ?(Y/N)</th>
+                                <th class="bg-body-secondary">Pest</br>Activity</br>(Pass/Failed)</th>
+                                <th class="bg-body-secondary">Equipment</br>Integrity</br>(Pass/Failed)</th>
+                                <th class="bg-body-secondary" style="width: 250px">Non Conformance details:</th>
+                                <th class="bg-body-secondary">Corrective Action</th>
+                                <th class="bg-body-secondary" style="width: 180px">Operator</br><span class="fw-light small">Declaration that the issue </br>found is now fixed and </br>production can start</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @* Row Table *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Table</td>
+                                <td>
+                                    <select class="form-select" id="validationCustom01" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom02" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom03" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom05"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom06"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom07"></textarea>
+                                </td>
+                            </tr>
+                            @* Row Mixers *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Mixers</td>
+                                <td>
+                                    <select class="form-select" id="validationCustom01" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom02" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom03" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom05"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom06"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom07"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row Oil Dispenser 1*@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Oil Dispenser</td>
+                                <td>
+                                    <select class="form-select" id="validationCustom01" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom02" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom03" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom05"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom06"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom07"></textarea>
+                                </td>
+                            </tr>
+                            
+                            @* Row Spices / Ingredients Area *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Spices/<br>Ingredients<br>Area</></td>
+                                <td>
+                                    <select class="form-select" id="validationCustom01" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom02" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom03" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom05"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom06"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom07"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row pH Station *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">pH Station</></td>
+                                <td>
+                                    <select class="form-select" id="validationCustom01" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom02" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom03" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom05"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom06"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom07"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row Oil Dispenser 2 *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Oil Dispenser</td>
+                                <td>
+                                    <select class="form-select" id="validationCustom01" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom02" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom03" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom05"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom06"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom07"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row Calibration Oil Dispenser *@
+                            <tr>
+                                <td class="align-content-start">Calibration Oil Dispenser:</td>
+                                <td colspan="7" class="align-content-start">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="input-group col-sm-2">
+                                                <span class="input-group-text">Oil Dispenser<br>1 - 5 Litrs:</span>
+                                                <input type="text" class="form-control" id="inpOilDispenser1-5Litrs" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="input-group col-sm-2">
+                                                <span class="input-group-text">Oil Dispenser<br>2 - 5 Litrs:</span>
+                                                <input type="text" class="form-control" id="inpOilDispenser2-5Litrs" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="input-group col-sm-2">
+                                                <span class="input-group-text">Oil Dispenser<br>3 - 5 Litrs:</span>
+                                                <input type="text" class="form-control" id="inpOilDispenser3-5Litrs" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="input-group col-sm-2">
+                                                <span class="input-group-text">Oil Dispenser<br>3 - 5 Litrs:</span>
+                                                <input type="text" class="form-control" id="inpOilDispenser4-5Litrs" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                            @* Row Walls *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Walls</td>
+                                <td>
+                                    <select class="form-select" id="validationCustom01" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom02" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom03" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom05"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom06"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom07"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row Surroundings *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Surroundings</td>
+                                <td>
+                                    <select class="form-select" id="validationCustom01" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom02" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom03" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom05"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom06"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom07"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row Floor *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Floor</td>
+                                <td>
+                                    <select class="form-select" id="validationCustom01" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom02" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom03" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="true">Pass</option>
+                                        <option value="false">Failed</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom05"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom06"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustom07"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row mt-3">
+                        <div class="col-sm-12">
+                            <h4>CheckList:</h4>
+                        </div>
+                        <div class="col-sm-12 mb-2">
+                            <div class="input-group">
+                                <label>Food Contact Surfaces Sanitised ?</label>
+                                <div class="form-check">
+                                    <select class="form-select" id="validationCustom011" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="Y">Yes</option>
+                                        <option value="N">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 mb-2">
+                            <div class="input-group">
+                                <label>Package Material and Raw Material Available ?</label>
+                                <div class="form-check">
+                                    <select class="form-select" id="validationCustom022" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="Y">Yes</option>
+                                        <option value="N">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                            <div class="input-group">
+                                <label>Traceability Code Recorded and Correct ?</label>
+                                <div class="form-check">
+                                    <select class="form-select" id="validationCustom022" required>
+                                        <option selected value="">Choose...</option>
+                                        <option value="Y">Yes</option>
+                                        <option value="N">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 mb-2">
+                            <div class="input-group">
+                                <label>Non Conformance Reported To</label>
+                                <div class="form-check" style="margin-left:10px">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck1" />
+                                    <label class="form-check-label" for="gridCheck1">Cleaning Communications Reports</label>
+                                    <br />
+                                    <input class="form-check-input" type="checkbox" id="gridCheck2" />
+                                    <label class="form-check-label" for="gridCheck2">Foreign Objects Reports</label>
+                                    <br />
+                                    <input class="form-check-input" type="checkbox" id="gridCheck3" />
+                                    <label class="form-check-label" for="gridCheck3">Maintenance Request Form Warehouse Officer</label>
+                                    <br />
+                                    <input class="form-check-input" type="checkbox" id="gridCheck4" />
+                                    <label class="form-check-label" for="gridCheck4">QA Department</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-primary">Print</button>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!--end::Row-->
+</div>
+<!--end::Container-->
