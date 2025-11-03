@@ -1,9 +1,169 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Riviana", "Riviana\Riviana.csproj", "{DC8289A6-1465-4C65-A2DC-56C98E2BC5EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Mixing Area.jpeg = Documents\Mixing Area.jpeg
+		Documents\pH Checks Mixing Area.jpeg = Documents\pH Checks Mixing Area.jpeg
+		Documents\pH Meter caliberation.jpeg = Documents\pH Meter caliberation.jpeg
+		Documents\Pre Startup Checks Mixing Area.jpeg = Documents\Pre Startup Checks Mixing Area.jpeg
+		Documents\Product Change Over Mixing Area.jpeg = Documents\Product Change Over Mixing Area.jpeg
+		Documents\Roza Artichoke Dip.jpeg = Documents\Roza Artichoke Dip.jpeg
+		Documents\Tools Register.jpeg = Documents\Tools Register.jpeg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Theme", "Theme", "{08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\index 2.html = Theme\index 2.html
+		Theme\index.html = Theme\index.html
+		Theme\index2 2.html = Theme\index2 2.html
+		Theme\index2.html = Theme\index2.html
+		Theme\index3 2.html = Theme\index3 2.html
+		Theme\index3.html = Theme\index3.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{5AA89979-0527-4935-882B-D2AAC19156DD}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\css\adminlte.css = Theme\css\adminlte.css
+		Theme\css\adminlte.css.map = Theme\css\adminlte.css.map
+		Theme\css\adminlte.min.css = Theme\css\adminlte.min.css
+		Theme\css\adminlte.min.css.map = Theme\css\adminlte.min.css.map
+		Theme\css\adminlte.rtl.css = Theme\css\adminlte.rtl.css
+		Theme\css\adminlte.rtl.css.map = Theme\css\adminlte.rtl.css.map
+		Theme\css\adminlte.rtl.min.css = Theme\css\adminlte.rtl.min.css
+		Theme\css\adminlte.rtl.min.css.map = Theme\css\adminlte.rtl.min.css.map
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{39E6CE02-54C3-4498-AEB9-3FDAE5B7042E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{7CA1FBC3-081C-4BA7-8497-34EF6205F829}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\assets\img\AdminLTEFullLogo.png = Theme\assets\img\AdminLTEFullLogo.png
+		Theme\assets\img\AdminLTELogo.png = Theme\assets\img\AdminLTELogo.png
+		Theme\assets\img\avatar.png = Theme\assets\img\avatar.png
+		Theme\assets\img\avatar2.png = Theme\assets\img\avatar2.png
+		Theme\assets\img\avatar3.png = Theme\assets\img\avatar3.png
+		Theme\assets\img\avatar4.png = Theme\assets\img\avatar4.png
+		Theme\assets\img\avatar5.png = Theme\assets\img\avatar5.png
+		Theme\assets\img\boxed-bg.jpg = Theme\assets\img\boxed-bg.jpg
+		Theme\assets\img\boxed-bg.png = Theme\assets\img\boxed-bg.png
+		Theme\assets\img\default-150x150.png = Theme\assets\img\default-150x150.png
+		Theme\assets\img\icons.png = Theme\assets\img\icons.png
+		Theme\assets\img\photo1.png = Theme\assets\img\photo1.png
+		Theme\assets\img\photo2.png = Theme\assets\img\photo2.png
+		Theme\assets\img\photo3.jpg = Theme\assets\img\photo3.jpg
+		Theme\assets\img\photo4.jpg = Theme\assets\img\photo4.jpg
+		Theme\assets\img\prod-1.jpg = Theme\assets\img\prod-1.jpg
+		Theme\assets\img\prod-2.jpg = Theme\assets\img\prod-2.jpg
+		Theme\assets\img\prod-3.jpg = Theme\assets\img\prod-3.jpg
+		Theme\assets\img\prod-4.jpg = Theme\assets\img\prod-4.jpg
+		Theme\assets\img\prod-5.jpg = Theme\assets\img\prod-5.jpg
+		Theme\assets\img\user1-128x128.jpg = Theme\assets\img\user1-128x128.jpg
+		Theme\assets\img\user2-160x160.jpg = Theme\assets\img\user2-160x160.jpg
+		Theme\assets\img\user3-128x128.jpg = Theme\assets\img\user3-128x128.jpg
+		Theme\assets\img\user4-128x128.jpg = Theme\assets\img\user4-128x128.jpg
+		Theme\assets\img\user5-128x128.jpg = Theme\assets\img\user5-128x128.jpg
+		Theme\assets\img\user6-128x128.jpg = Theme\assets\img\user6-128x128.jpg
+		Theme\assets\img\user7-128x128.jpg = Theme\assets\img\user7-128x128.jpg
+		Theme\assets\img\user8-128x128.jpg = Theme\assets\img\user8-128x128.jpg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "credit", "credit", "{00C44E8D-8FCC-4FBB-985E-3196E0AE70D0}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\assets\img\credit\american-express.png = Theme\assets\img\credit\american-express.png
+		Theme\assets\img\credit\cirrus.png = Theme\assets\img\credit\cirrus.png
+		Theme\assets\img\credit\mastercard.png = Theme\assets\img\credit\mastercard.png
+		Theme\assets\img\credit\paypal.png = Theme\assets\img\credit\paypal.png
+		Theme\assets\img\credit\paypal2.png = Theme\assets\img\credit\paypal2.png
+		Theme\assets\img\credit\visa.png = Theme\assets\img\credit\visa.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{EB79CE54-46CA-4D2D-A199-D2951D6C7499}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\docs\browser-support.html = Theme\docs\browser-support.html
+		Theme\docs\color-mode.html = Theme\docs\color-mode.html
+		Theme\docs\faq.html = Theme\docs\faq.html
+		Theme\docs\how-to-contribute.html = Theme\docs\how-to-contribute.html
+		Theme\docs\introduction.html = Theme\docs\introduction.html
+		Theme\docs\layout.html = Theme\docs\layout.html
+		Theme\docs\license.html = Theme\docs\license.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{B325D00D-2565-4C97-B4D1-D39EFE70E147}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\docs\components\main-header.html = Theme\docs\components\main-header.html
+		Theme\docs\components\main-sidebar.html = Theme\docs\components\main-sidebar.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "javascript", "javascript", "{BFF7FEB5-4E40-4FDC-95D6-DF24BB7E3442}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\docs\javascript\pushmenu.html = Theme\docs\javascript\pushmenu.html
+		Theme\docs\javascript\treeview.html = Theme\docs\javascript\treeview.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{887A17B6-741B-4948-87F2-07B38FCA2862}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\examples\lockscreen.html = Theme\examples\lockscreen.html
+		Theme\examples\login-v2.html = Theme\examples\login-v2.html
+		Theme\examples\login.html = Theme\examples\login.html
+		Theme\examples\register-v2.html = Theme\examples\register-v2.html
+		Theme\examples\register.html = Theme\examples\register.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "forms", "forms", "{2268A594-1F3A-4E23-A204-B5B4A30B76E5}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\forms\general.html = Theme\forms\general.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generate", "generate", "{4F0B8600-FE58-446A-8D5F-CD0D1B3A919F}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\generate\theme.html = Theme\generate\theme.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{21873BA6-1884-4D5A-81DD-70BBA30D41C8}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\js\adminlte.js = Theme\js\adminlte.js
+		Theme\js\adminlte.js.map = Theme\js\adminlte.js.map
+		Theme\js\adminlte.min.js = Theme\js\adminlte.min.js
+		Theme\js\adminlte.min.js.map = Theme\js\adminlte.min.js.map
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "layout", "layout", "{7F4F8D4B-44E8-4300-87F5-C66B8D7445ED}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\layout\collapsed-sidebar.html = Theme\layout\collapsed-sidebar.html
+		Theme\layout\fixed-complete.html = Theme\layout\fixed-complete.html
+		Theme\layout\fixed-footer.html = Theme\layout\fixed-footer.html
+		Theme\layout\fixed-header.html = Theme\layout\fixed-header.html
+		Theme\layout\fixed-sidebar.html = Theme\layout\fixed-sidebar.html
+		Theme\layout\layout-custom-area.html = Theme\layout\layout-custom-area.html
+		Theme\layout\layout-rtl.html = Theme\layout\layout-rtl.html
+		Theme\layout\logo-switch.html = Theme\layout\logo-switch.html
+		Theme\layout\sidebar-mini.html = Theme\layout\sidebar-mini.html
+		Theme\layout\unfixed-sidebar.html = Theme\layout\unfixed-sidebar.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tables", "tables", "{AC1EF065-1E10-4DCE-AA58-8BC1E04C56BA}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\tables\simple.html = Theme\tables\simple.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{F3AE0E7B-6D26-486C-8D5A-5D78441E43CC}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\UI\general.html = Theme\UI\general.html
+		Theme\UI\icons.html = Theme\UI\icons.html
+		Theme\UI\timeline.html = Theme\UI\timeline.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "widgets", "widgets", "{CC5973B5-EF96-41BD-AA04-E08152EF1053}"
+	ProjectSection(SolutionItems) = preProject
+		Theme\widgets\cards.html = Theme\widgets\cards.html
+		Theme\widgets\info-box.html = Theme\widgets\info-box.html
+		Theme\widgets\small-box.html = Theme\widgets\small-box.html
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +178,25 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5AA89979-0527-4935-882B-D2AAC19156DD} = {08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}
+		{39E6CE02-54C3-4498-AEB9-3FDAE5B7042E} = {08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}
+		{7CA1FBC3-081C-4BA7-8497-34EF6205F829} = {39E6CE02-54C3-4498-AEB9-3FDAE5B7042E}
+		{00C44E8D-8FCC-4FBB-985E-3196E0AE70D0} = {7CA1FBC3-081C-4BA7-8497-34EF6205F829}
+		{EB79CE54-46CA-4D2D-A199-D2951D6C7499} = {08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}
+		{B325D00D-2565-4C97-B4D1-D39EFE70E147} = {EB79CE54-46CA-4D2D-A199-D2951D6C7499}
+		{BFF7FEB5-4E40-4FDC-95D6-DF24BB7E3442} = {EB79CE54-46CA-4D2D-A199-D2951D6C7499}
+		{887A17B6-741B-4948-87F2-07B38FCA2862} = {08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}
+		{2268A594-1F3A-4E23-A204-B5B4A30B76E5} = {08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}
+		{4F0B8600-FE58-446A-8D5F-CD0D1B3A919F} = {08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}
+		{21873BA6-1884-4D5A-81DD-70BBA30D41C8} = {08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}
+		{7F4F8D4B-44E8-4300-87F5-C66B8D7445ED} = {08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}
+		{AC1EF065-1E10-4DCE-AA58-8BC1E04C56BA} = {08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}
+		{F3AE0E7B-6D26-486C-8D5A-5D78441E43CC} = {08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}
+		{CC5973B5-EF96-41BD-AA04-E08152EF1053} = {08D0C2E8-5C62-46DB-8B44-8BFB30C53EE1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C174627C-1EC1-4C32-9930-9CEE4782BD23}
 	EndGlobalSection
 EndGlobal
