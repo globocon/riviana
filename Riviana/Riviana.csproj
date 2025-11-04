@@ -13,4 +13,9 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="QuestPDF" Version="2025.7.4" />
+    <PackageReference Include="QuestPDF.HTML" Version="1.4.2" />
+  </ItemGroup>
+
 </Project>
