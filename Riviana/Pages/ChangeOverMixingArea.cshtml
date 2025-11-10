@@ -1,0 +1,885 @@
+﻿@page
+@model Riviana.Pages.ChangeOverMixingAreaModel
+@{
+    ViewData["Title"] = "Change Over Mixing Area";
+}
+<!--begin::Container-->
+<div class="container-fluid">
+    <!--begin::Row-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary card-outline mb-4">
+                <div class="card-header">
+                    <table class="table table-bordered">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th rowspan="2">
+                                    <div class="d-flex justify-content-center align-items-center" style="height:100%;">
+                                        <img src="~/assets/img/riviana_logo.svg" height="60" alt="Logo" />
+                                    </div>
+                                </th>
+                                <th>Procedure</th>
+                                <th colspan="4">Product Changeover - Mixing Area</th>
+                            </tr>
+                            <tr>
+
+                                <td>Document/Form No:</td>
+                                <td>F701</td>
+                                <td>Issue Date:</td>
+                                <td>07/03/2025</td>
+                                <td>Page 1 of 2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-text">Date</span>
+                                <input type="date" class="form-control" id="inpDate" />
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span class="text-uppercase float-end">Note: Check Allergen work instruction before product changeover</span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <h2 class="card-title text-uppercase fw-bold">Mixer 1 (Vegan products priority)</h2>
+                    </div>
+                    <table class="table table-bordered mb-5">
+                        <thead>
+                            <tr class="bg-body-secondary text-center align-middle">
+                                <th class="bg-body-secondary">Start Time</th>
+                                <th class="bg-body-secondary">End Time</th>
+                                <th class="bg-body-secondary">Product Name</th>
+                                <th class="bg-body-secondary">Area</th>
+                                <th class="bg-body-secondary">P/F</th>
+                                <th class="bg-body-secondary">Area</th>
+                                <th class="bg-body-secondary">P/F</th>
+                                <th class="bg-body-secondary">Previous Raw Material Removed?</th>
+                                <th class="bg-body-secondary">All Area Clean and Tidy?</th>
+                                <th class="bg-body-secondary">All Raw Materials of Next Production Available</th>
+                                <th class="bg-body-secondary">Mixer</th>
+                                <th class="bg-body-secondary">Verified Correct Ingredients Used</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @* Row - 1 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td colspan="3" class="bg-body-secondary text-start fst-italic">Pre Start Up Check</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 2 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 3 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 4 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Mixer 2 Section -->                    
+                    <div class="row mt-5 mb-3">
+                        <h2 class="card-title text-uppercase fw-bold">MIXER 2 (VEGAN PRODUCTS PRIORITY)</h2>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="bg-body-secondary text-center align-middle">
+                                <th class="bg-body-secondary">Start Time</th>
+                                <th class="bg-body-secondary">End Time</th>
+                                <th class="bg-body-secondary">Product Name</th>
+                                <th class="bg-body-secondary">Area</th>
+                                <th class="bg-body-secondary">P/F</th>
+                                <th class="bg-body-secondary">Area</th>
+                                <th class="bg-body-secondary">P/F</th>
+                                <th class="bg-body-secondary">Previous Raw Material Removed?</th>
+                                <th class="bg-body-secondary">All Area Clean and Tidy?</th>
+                                <th class="bg-body-secondary">All Raw Materials of Next Production Available</th>
+                                <th class="bg-body-secondary">Mixer</th>
+                                <th class="bg-body-secondary">Verified Correct Ingredients Used</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @* Row - 1 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td colspan="3" class="bg-body-secondary text-start fst-italic">Pre Start Up Check</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 2 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 3 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 4 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-sm-12 mb-2 text-center">
+                            <div>Version 4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!--end::Row-->
+    <!--begin::Row-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary card-outline mb-4">
+                <div class="card-header">
+                    <table class="table table-bordered">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th rowspan="2">
+                                    <div class="d-flex justify-content-center align-items-center" style="height:100%;">
+                                        <img src="~/assets/img/riviana_logo.svg" height="60" alt="Logo" />
+                                    </div>
+                                </th>
+                                <th>Procedure</th>
+                                <th colspan="4">Product Changeover - Mixing Area</th>
+                            </tr>
+                            <tr>
+
+                                <td>Document/Form No:</td>
+                                <td>F701</td>
+                                <td>Issue Date:</td>
+                                <td>07/03/2025</td>
+                                <td>Page 2 of 2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-text">Date</span>
+                                <input type="date" class="form-control" id="inpDate" />
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <span class="text-uppercase float-end">Note: Check Allergen work instruction before product changeover</span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <h2 class="card-title text-uppercase fw-bold">Mixer 3 (Vegan products priority)</h2>
+                    </div>
+                    <table class="table table-bordered mb-5">
+                        <thead>
+                            <tr class="bg-body-secondary text-center align-middle">
+                                <th class="bg-body-secondary">Start Time</th>
+                                <th class="bg-body-secondary">End Time</th>
+                                <th class="bg-body-secondary">Product Name</th>
+                                <th class="bg-body-secondary">Area</th>
+                                <th class="bg-body-secondary">P/F</th>
+                                <th class="bg-body-secondary">Area</th>
+                                <th class="bg-body-secondary">P/F</th>
+                                <th class="bg-body-secondary">Previous Raw Material Removed?</th>
+                                <th class="bg-body-secondary">All Area Clean and Tidy?</th>
+                                <th class="bg-body-secondary">All Raw Materials of Next Production Available</th>
+                                <th class="bg-body-secondary">Mixer</th>
+                                <th class="bg-body-secondary">Verified Correct Ingredients Used</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @* Row - 1 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td colspan="3" class="bg-body-secondary text-start fst-italic">Pre Start Up Check</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 2 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 3 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 4 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Mixer 2 Section -->
+                    <div class="row mt-5 mb-3">
+                        <h2 class="card-title text-uppercase fw-bold">MIXER 4 (VEGAN PRODUCTS PRIORITY)</h2>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="bg-body-secondary text-center align-middle">
+                                <th class="bg-body-secondary">Start Time</th>
+                                <th class="bg-body-secondary">End Time</th>
+                                <th class="bg-body-secondary">Product Name</th>
+                                <th class="bg-body-secondary">Area</th>
+                                <th class="bg-body-secondary">P/F</th>
+                                <th class="bg-body-secondary">Area</th>
+                                <th class="bg-body-secondary">P/F</th>
+                                <th class="bg-body-secondary">Previous Raw Material Removed?</th>
+                                <th class="bg-body-secondary">All Area Clean and Tidy?</th>
+                                <th class="bg-body-secondary">All Raw Materials of Next Production Available</th>
+                                <th class="bg-body-secondary">Mixer</th>
+                                <th class="bg-body-secondary">Verified Correct Ingredients Used</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @* Row - 1 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td colspan="3" class="bg-body-secondary text-start fst-italic">Pre Start Up Check</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 2 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 3 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+
+                            @* Row - 4 *@
+                            <tr>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="time" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Pass</option>
+                                        <option>Fail</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="form-select">
+                                        <option value="">Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-sm-12 mb-2 text-center">
+                            <div>Version 4</div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="saveme()">Save</button>
+                    <button type="button" class="btn btn-primary">Print</button>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!--end::Row-->
+</div>
+<!--end::Container-->
+
+
+<script type="text/javascript">
+
+    function saveme(){
+        var r = $('#inpsign').val();
+        alert("Saved: " + r);};
+
+
+</script>
