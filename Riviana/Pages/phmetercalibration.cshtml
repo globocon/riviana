@@ -1,0 +1,157 @@
+﻿@page
+@model Riviana.Pages.phmetercalibration
+@{
+}
+<!--begin::App Content Header-->
+<div class="app-content-header">
+    <!--begin::Container-->
+    <div class="container-fluid">
+        <!--begin::Row-->
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="mb-0">ph meter calibration</h3>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">ph meter calibration</li>
+                </ol>
+            </div>
+        </div>
+        <!--end::Row-->
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::App Content Header-->
+
+<div class="content">
+
+
+    <div class="container mt-4">
+
+        <!-- PH Checks Data Entry Form -->
+        <form id="entryForm" class="d-flex flex-wrap align-items-end gap-2 border rounded p-2 bg-light small">
+            <!-- Date -->
+            <div class="d-flex flex-column">
+                <label for="date" class="form-label mb-0 small">Date</label>
+                <input type="date" class="form-control form-control-sm" id="date" style="width:130px;">
+            </div>
+
+            <!-- Time -->
+            <div class="d-flex flex-column">
+                <label for="time" class="form-label mb-0 small">Time</label>
+                <input type="time" class="form-control form-control-sm" id="time" style="width:110px;">
+            </div>
+
+            <!-- pH 4.0 -->
+            <div class="d-flex flex-column">
+                <label for="ph4" class="form-label mb-0 small">pH 4.0</label>
+                <input type="number" step="0.01" class="form-control form-control-sm" id="ph4" style="width:90px;" placeholder="4.0">
+            </div>
+
+            <!-- pH 7.0 -->
+            <div class="d-flex flex-column">
+                <label for="ph7" class="form-label mb-0 small">pH 7.0</label>
+                <input type="number" step="0.01" class="form-control form-control-sm" id="ph7" style="width:90px;" placeholder="7.0">
+            </div>
+
+            <!-- Slope (%) -->
+            <div class="d-flex flex-column">
+                <label for="slop" class="form-label mb-0 small">Slope (%)</label>
+                <input type="number" step="0.01" class="form-control form-control-sm" id="slop" style="width:90px;" readonly placeholder="%">
+            </div>
+
+            <!-- Checked By -->
+            <div class="d-flex flex-column">
+                <label for="checkedBy" class="form-label mb-0 small">Checked By</label>
+                <input type="text" class="form-control form-control-sm" id="checkedBy" style="width:150px;" placeholder="Name">
+            </div>
+
+            <!-- Add Button -->
+            <div>
+                <button type="submit" class="btn btn-sm btn-success rounded-circle mt-3" title="Add Entry">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </form>
+
+        <!-- Data Table -->
+        <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped align-middle mb-0" id="dataTable">
+                <thead class="table-secondary text-center small">
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>pH 4.0</th>
+                        <th>pH 7.0</th>
+                        <th>Slop (%)</th>
+                        <th>Checked By</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="small text-center">
+                    <!-- Rows added dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        @section Scripts {
+            <script>
+                // Auto-calculate Slope (%)
+                $("#ph4, #ph7").on("input", function () {
+                    var ph4 = parseFloat($("#ph4").val());
+                    var ph7 = parseFloat($("#ph7").val());
+                    if (!isNaN(ph4) && !isNaN(ph7)) {
+                        var slop = ((ph7 - ph4) / (7 - 4) * 100).toFixed(2);
+                        $("#slop").val(slop);
+                    } else {
+                        $("#slop").val('');
+                    }
+                });
+
+                // Handle form submission
+                $("#entryForm").on("submit", function (e) {
+                    e.preventDefault();
+
+                    var date = $("#date").val();
+                    var time = $("#time").val();
+                    var ph4 = $("#ph4").val();
+                    var ph7 = $("#ph7").val();
+                    var slop = $("#slop").val();
+                    var checkedBy = $("#checkedBy").val();
+
+                    var newRow = `
+                        <tr>
+                            <td>${date}</td>
+                            <td>${time}</td>
+                            <td>${ph4}</td>
+                            <td>${ph7}</td>
+                            <td>${slop}</td>
+                            <td>${checkedBy}</td>
+                            <td><button type="button" class="btn btn-sm btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>
+                        </tr>`;
+
+                    $("#dataTable tbody").append(newRow);
+                    this.reset();
+                    $("#slop").val('');
+                });
+
+                // Delete row
+                $(document).on("click", ".btn-delete", function () {
+                    $(this).closest("tr").remove();
+                });
+            </script>
+        }
+    </div>
+
+
+
+  
+   
+
+
+
+   
+</div>
+
+

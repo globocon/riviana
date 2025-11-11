@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap">
     <!--end::Fonts-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css"
           crossorigin="anonymous" />
@@ -48,6 +49,7 @@
           href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
           integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4="
           crossorigin="anonymous" />
+    <link href="~/css/form-print.css" rel="stylesheet" />
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -243,8 +245,10 @@
             <div class="sidebar-brand" style="background-color:#0a369d">
                 <!--begin::Brand Link-->
                 <a href="#" class="brand-link">
+
                     <!--begin::Brand Image-->                    
                     <img src="~/assets/img/riviana_logo.svg"
+
                          alt="Riviana"
                          class="brand-image opacity-75 shadow" />
                     <!--end::Brand Image-->
@@ -335,19 +339,19 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="ToolsRegister" class="nav-link">
                                         <i class="nav-icon bi bi-circle"></i>
                                         <p>Tools Register</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="PhChecks" class="nav-link">
                                         <i class="nav-icon bi bi-circle"></i>
                                         <p>Ph Value</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="phmetercalibration" class="nav-link">
                                         <i class="nav-icon bi bi-circle"></i>
                                         <p>Ph Calibration (once in a day)</p>
                                     </a>
@@ -387,27 +391,7 @@
         <!--end::Sidebar-->
         <!--begin::App Main-->
         <main class="app-main">
-            <!--begin::App Content Header-->
-            <div class="app-content-header">
-                <!--begin::Container-->
-                <div class="container-fluid">
-                    <!--begin::Row-->
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h3 class="mb-0">Dashboard</h3>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-end">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <!--end::Row-->
-                </div>
-                <!--end::Container-->
-            </div>
-            <!--end::App Content Header-->
+            
             <!--begin::App Content-->
             <div class="app-content">
                @RenderBody()
@@ -450,7 +434,9 @@
     <!-- AdminLTE -->
     <script src="~/js/adminlte.min.js"></script>
 
+
     @await RenderSectionAsync("Scripts", required: false)
+
 
 </body>
 <!--end::Body-->

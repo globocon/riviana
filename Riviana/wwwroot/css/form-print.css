@@ -1,0 +1,52 @@
+/* Print rules */
+@media print {
+    body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Hide unwanted sections during print */
+    header, footer, nav, aside,
+    .app-content-header,
+    .breadcrumb,
+    .btn {
+        display: none !important;
+    }
+
+    /* Only print form section */
+    .form-section {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+        background: white !important;
+        padding: 25px !important;
+        page-break-inside: avoid;
+    }
+
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    th, td {
+        border: 1px solid #000 !important;
+        padding: 6px !important;
+    }
+
+    /* Optional: Add Riviana logo and title at the top when printing */
+    .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+/* Must be outside @media block */
+@page {
+    margin: 20mm;
+}
+
+/* Hidden by default, only visible during print */
+.print-header {
+    display: none;
+}

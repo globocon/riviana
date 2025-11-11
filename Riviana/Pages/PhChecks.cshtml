@@ -1,0 +1,167 @@
+﻿@page
+@model Riviana.Pages.PhChecks
+@{
+}
+<!--begin::App Content Header-->
+<div class="app-content-header">
+    <!--begin::Container-->
+    <div class="container-fluid">
+        <!--begin::Row-->
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="mb-0">ph Checks</h3>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">ph Checks</li>
+                </ol>
+            </div>
+        </div>
+        <!--end::Row-->
+    </div>
+    <!--end::Container-->
+</div>
+<!--end::App Content Header-->
+
+<div class="content">
+
+
+    <div class="container mt-4">
+        <!-- Mixer Data Entry Form -->
+        <form id="entryForm" class="row g-0 align-items-end small border rounded p-2 bg-light">
+            <div class="col-md-1 px-1">
+                <label for="date" class="form-label mb-0 small">Date</label>
+                <input type="date" class="form-control form-control-sm" id="date" >
+            </div>
+
+            <div class="col-md-1 px-1">
+                <label for="mixerNo" class="form-label mb-0 small">Mixer</label>
+                <select class="form-select form-select-sm" id="mixerNo" >
+                    <option value="">Select</option>
+                    <option value="Mixer 1">Mixer 1</option>
+                    <option value="Mixer 2">Mixer 2</option>
+                    <option value="Mixer 3">Mixer 3</option>
+                </select>
+            </div>
+
+            <div class="col-md-2 px-1">
+                <label for="product" class="form-label mb-0 small">Product</label>
+                <input type="text" class="form-control form-control-sm" id="product" placeholder="Product" >
+            </div>
+
+            <div class="col-md-1 px-1">
+                <label for="time" class="form-label mb-0 small">Time</label>
+                <input type="time" class="form-control form-control-sm" id="time" >
+            </div>
+
+            <div class="col-md-1 px-1" style="max-width:70px;">
+                <label for="loadNo" class="form-label mb-0 small">Load</label>
+                <input type="number" class="form-control form-control-sm text-center" id="loadNo" placeholder="#" >
+            </div>
+
+            <div class="col-md-2 px-1">
+                <label for="checkedBy" class="form-label mb-0 small">Checked By</label>
+                <input type="text" class="form-control form-control-sm" id="checkedBy" placeholder="Name" >
+            </div>
+
+            <div class="col-md-1 px-1">
+                <label for="status" class="form-label mb-0 small">Status</label>
+                <select class="form-select form-select-sm" id="status">
+                    <option value="OK">OK</option>
+                    <option value="Low">Low</option>
+                    <option value="Issue">Issue</option>
+                </select>
+            </div>
+
+            <div class="col-md-2 px-1">
+                <label for="remarks" class="form-label mb-0 small">Remarks</label>
+                <input type="text" class="form-control form-control-sm" id="remarks" placeholder="">
+            </div>
+
+            <div class="col-auto ps-1">
+                <button type="submit" class="btn btn-sm btn-success rounded-circle mt-3" title="Add Entry">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </form>
+
+        <!-- Data Table -->
+        <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped align-middle mb-0" id="dataTable">
+                <thead class="table-secondary text-center small">
+                    <tr>
+                        <th>Date</th>
+                        <th>Mixer</th>
+                        <th>Product</th>
+                        <th>Time</th>
+                        <th>Load</th>
+                        <th>Checked By</th>
+                        <th>Status</th>
+                        <th>Remarks</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="small text-center">
+                    <!-- Rows will be added dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+       @section Scripts {
+           <script>
+                                  $("#entryForm").on("submit", function (e) {
+                    e.preventDefault(); // prevent default form submission
+
+                    // Get values
+                    var date = $("#date").val();
+                    var mixerNo = $("#mixerNo").val();
+                    var product = $("#product").val();
+                    var time = $("#time").val();
+                    var loadNo = $("#loadNo").val();
+                    var checkedBy = $("#checkedBy").val();
+                    var status = $("#status").val();
+                    var remarks = $("#remarks").val();
+
+                    var badgeClass = status === "OK" ? "bg-success"
+                        : status === "Low" ? "bg-warning text-dark"
+                        : "bg-danger";
+
+                    // Append row
+                    var newRow = `
+                        <tr>
+                            <td>${date}</td>
+                            <td>${mixerNo}</td>
+                            <td>${product}</td>
+                            <td>${time}</td>
+                            <td>${loadNo}</td>
+                            <td>${checkedBy}</td>
+                            <td><span class="badge ${badgeClass}">${status}</span></td>
+                            <td>${remarks}</td>
+                            <td><button type="button" class="btn btn-sm btn-danger btn-delete"><i class="fa fa-trash"></i></button></td>
+                        </tr>`;
+
+                    $("#dataTable tbody").append(newRow);
+
+                    // Reset the form
+                    this.reset();
+                });
+
+                // Delete row
+                               $(document).on("click", ".btn-delete", function () {
+                                   $(this).closest("tr").remove();
+                               });
+        
+            </script>
+        }
+    </div>
+
+  
+   
+
+
+
+   
+</div>
+
+
