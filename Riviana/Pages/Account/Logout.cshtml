@@ -1,0 +1,12 @@
+﻿@page
+@model Riviana.Pages.Account.LogoutModel
+@{
+    Layout = "_LayoutLogin";
+}
+
+<div class="row g-3">
+    <h3 class="text-center">You have been logged out.</h3>
+    <p class="text-center">
+        <a href="@Url.Page("/Account/Login")">Back to login page</a>
+    </p>
+</div>

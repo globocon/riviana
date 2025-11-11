@@ -1,0 +1,928 @@
+﻿@page
+@model Riviana.Pages.PreStartChecksMixingAreaModel
+@{
+    ViewData["Title"] = "Pre Start Checks Mixing Area";
+}
+<!--begin::Container-->
+<div class="container-fluid">
+    <!--begin::Row-->
+    <div id="page1" class="row">
+        <div class="col-md-12">
+            <div class="card card-primary card-outline mb-4">
+                <div class="card-header">
+                    <table class="table table-bordered">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th rowspan="2">
+                                    <div class="d-flex justify-content-center align-items-center" style="height:100%;">
+                                        <img src="~/assets/img/riviana_logo.svg" height="60" alt="Logo" />
+                                    </div>
+                                </th>
+                                <th>Procedure</th>
+                                <th colspan="4">Pre-Start Up Checks - Mixing Area</th>
+                            </tr>
+                            <tr>
+
+                                <td>Document/Form No:</td>
+                                <td>F701</td>
+                                <td>Issue Date:</td>
+                                <td>07/03/2025</td>
+                                <td>Page 1 of 2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <h2 class="card-title text-uppercase fw-bold">PreStart Up Checks - Mixing Area</h2>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-text">Date</span>
+                                <input type="date" class="form-control" id="inpDate" />
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group col-sm-2">
+                                <span class="input-group-text">Time Start</span>
+                                <input type="time" class="form-control" id="inpTimeStart" />
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                             <div class="input-group col-sm-2">
+                                <span class="input-group-text">Time Finish</span>
+                                <input type="time" class="form-control" id="inpTimeFinish" />
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group col-sm-2">
+                                <span class="input-group-text">Team Leader</span>
+                                <input type="text" class="form-control" id="inpTeamLeader" />
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="bg-body-secondary" style="width: 10px">Equipment</th>
+                                <th class="bg-body-secondary">Clean</br>(Pass/Failed)</th>
+                                <th class="bg-body-secondary" style="width: 100px">Foreign</br>Objects</br>Found ?(Y/N)</th>
+                                <th class="bg-body-secondary">Pest</br>Activity</br>(Pass/Failed)</th>
+                                <th class="bg-body-secondary">Equipment</br>Integrity</br>(Pass/Failed)</th>
+                                <th class="bg-body-secondary" style="width: 200px">Non Conformance details:</th>
+                                <th class="bg-body-secondary">Corrective Action</th>
+                                <th class="bg-body-secondary" style="width: 180px">Operator</br><span class="fw-light small">Declaration that the issue </br>found is now fixed and </br>production can start</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @* Row Table *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Table</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="TblCleanPF" id="Tbl01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="TblCleanPF" id="Tbl01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01CleanF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>                                    
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="TblForeignYN" id="Tbl01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="TblForeignYN" id="Tbl01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01ForeignN">N</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>                                    
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="TblPestPF" id="Tbl01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="TblPestPF" id="Tbl01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01PestF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="TblEquipmentPF" id="Tbl01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="TblEquipmentPF" id="Tbl01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01EquipmentF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R105"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R106"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R107"></textarea>
+                                </td>
+                            </tr>
+                            @* Row Mixers *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Mixers</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="MixersCleanPF" id="Mixers01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="MixersCleanPF" id="Mixers01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01CleanF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="MixersForeignYN" id="Mixers01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="MixersForeignYN" id="Mixers01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01ForeignN">N</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="MixersPestPF" id="Mixers01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="MixersPestPF" id="Mixers01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01PestF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="MixersEquipmentPF" id="Mixers01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="MixersEquipmentPF" id="Mixers01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01EquipmentF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R205"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R206"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R207"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row Oil Dispenser 1*@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Oil Dispenser</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="DispenserCleanPF" id="Dispenser01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="DispenserCleanPF" id="Dispenser01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01CleanF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="DispenserForeignYN" id="Dispenser01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="DispenserForeignYN" id="Dispenser01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01ForeignN">N</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="DispenserPestPF" id="Dispenser01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="DispenserPestPF" id="Dispenser01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01PestF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="DispenserEquipmentPF" id="Dispenser01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="DispenserEquipmentPF" id="Dispenser01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01EquipmentF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R305"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R306"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R307"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row Spices / Ingredients Area *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Spices/<br>Ingredients<br>Area</></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="spicesCleanPF" id="spices01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="spicesCleanPF" id="spices01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01CleanF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="spicesForeignYN" id="spices01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="spicesForeignYN" id="spices01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01ForeignN">N</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="spicesPestPF" id="spices01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="spicesPestPF" id="spices01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01PestF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="spicesEquipmentPF" id="spices01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="spicesEquipmentPF" id="spices01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01EquipmentF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R405"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R406"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R407"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row pH Station *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">pH Station</></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="PhCleanPF" id="Ph01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="PhCleanPF" id="Ph01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01CleanF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="PhForeignYN" id="Ph01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="PhForeignYN" id="Ph01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01ForeignN">N</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="PhPestPF" id="Ph01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="PhPestPF" id="Ph01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01PestF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="PhEquipmentPF" id="Ph01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="PhEquipmentPF" id="Ph01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01EquipmentF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R505"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R506"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R507"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row Oil Dispenser 2 *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Oil Dispenser</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2CleanPF" id="Dispenser201CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2CleanPF" id="Dispenser201CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201CleanF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2ForeignYN" id="Dispenser201ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2ForeignYN" id="Dispenser201ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201ForeignN">N</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2PestPF" id="Dispenser201PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2PestPF" id="Dispenser201PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201PestF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2EquipmentPF" id="Dispenser201EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2EquipmentPF" id="Dispenser201EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201EquipmentF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R605"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R606"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R607"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row Calibration Oil Dispenser *@
+                            <tr>
+                                <td class="align-content-start">Calibration Oil Dispenser:</td>
+                                <td colspan="7" class="align-content-start">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="input-group col-sm-2">
+                                                <span class="input-group-text">Oil Dispenser<br>1 - 5 Litrs:</span>
+                                                <input type="text" class="form-control" id="inpOilDispenser1-5Litrs" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="input-group col-sm-2">
+                                                <span class="input-group-text">Oil Dispenser<br>2 - 5 Litrs:</span>
+                                                <input type="text" class="form-control" id="inpOilDispenser2-5Litrs" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="input-group col-sm-2">
+                                                <span class="input-group-text">Oil Dispenser<br>3 - 5 Litrs:</span>
+                                                <input type="text" class="form-control" id="inpOilDispenser3-5Litrs" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="input-group col-sm-2">
+                                                <span class="input-group-text">Oil Dispenser<br>3 - 5 Litrs:</span>
+                                                <input type="text" class="form-control" id="inpOilDispenser4-5Litrs" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                            @* Row Walls *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Walls</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="WallCleanPF" id="Wall01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="WallCleanPF" id="Wall01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01CleanF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="WallForeignYN" id="Wall01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="WallForeignYN" id="Wall01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01ForeignN">N</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="WallPestPF" id="Wall01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="WallPestPF" id="Wall01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01PestF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="WallEquipmentPF" id="Wall01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="WallEquipmentPF" id="Wall01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01EquipmentF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R705"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R706"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R707"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row Surroundings *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Surroundings</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="SurroundCleanPF" id="Surround01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="SurroundCleanPF" id="Surround01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01CleanF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="SurroundForeignYN" id="Surround01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="SurroundForeignYN" id="Surround01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01ForeignN">N</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="SurroundPestPF" id="Surround01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="SurroundPestPF" id="Surround01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01PestF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="SurroundEquipmentPF" id="Surround01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="SurroundEquipmentPF" id="Surround01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01EquipmentF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R805"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R806"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R807"></textarea>
+                                </td>
+                            </tr>
+
+                            @* Row Floor *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Floor</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="FloorCleanPF" id="Floor01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="FloorCleanPF" id="Floor01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01CleanF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="FloorForeignYN" id="Floor01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="FloorForeignYN" id="Floor01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01ForeignN">N</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="FloorPestPF" id="Floor01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="FloorPestPF" id="Floor01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01PestF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="FloorEquipmentPF" id="Floor01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="FloorEquipmentPF" id="Floor01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01EquipmentF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R905"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R906"></textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" id="validationCustomT1R907"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row mt-3">
+                        <div class="col-sm-12">
+                            <h4>CheckList:</h4>
+                        </div>
+                        <div class="col-sm-12 mb-2">
+                            <div class="input-group">
+                                <label>Food Contact Surfaces Sanitised ?</label>
+                                <div class="form-check">
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="FoodContactYN" id="FoodContactY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="FoodContactY">YES </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="FoodContactYN" id="FoodContactN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="FoodContactN">NO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 mb-2">
+                            <div class="input-group">
+                                <label>Package Material and Raw Material Available ?</label>
+                                <div class="d-flex align-items-center">
+                                    <div class="form-check me-1">
+                                        <input class="form-check-input" type="checkbox" name="RawMaterialYN" id="RawMaterialY" value="YES" onclick="toggleCheckbox(this)" />
+                                        <label class="form-check-label" for="RawMaterialY">YES </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="RawMaterialYN" id="RawMaterialN" value="NO" onclick="toggleCheckbox(this)" />
+                                        <label class="form-check-label" for="RawMaterialN">NO</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                            <div class="input-group">
+                                <label>Traceability Code Recorded and Correct ?</label>
+                                <div class="d-flex align-items-center">
+                                    <div class="form-check me-1">
+                                        <input class="form-check-input" type="checkbox" name="TraceabilityYN" id="TraceabilityY" value="YES" onclick="toggleCheckbox(this)" />
+                                        <label class="form-check-label" for="TraceabilityY">YES </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="TraceabilityYN" id="TraceabilityN" value="NO" onclick="toggleCheckbox(this)" />
+                                        <label class="form-check-label" for="TraceabilityN">NO</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 mb-2">
+                            <div class="input-group">
+                                <label>Non Conformance Reported To</label>
+                                <div class="form-check" style="margin-left:10px">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck1" />
+                                    <label class="form-check-label" for="gridCheck1">Cleaning Communications Reports</label>
+                                    <br />
+                                    <input class="form-check-input" type="checkbox" id="gridCheck2" />
+                                    <label class="form-check-label" for="gridCheck2">Foreign Objects Reports</label>
+                                    <br />
+                                    <input class="form-check-input" type="checkbox" id="gridCheck3" />
+                                    <label class="form-check-label" for="gridCheck3">Maintenance Request Form Warehouse Officer</label>
+                                    <br />
+                                    <input class="form-check-input" type="checkbox" id="gridCheck4" />
+                                    <label class="form-check-label" for="gridCheck4">QA Department</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-sm-12 mb-2 text-center">
+                            <div>Version 3<span class="ms-5">07.03.2025</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!--end::Row-->
+    <!--begin::Row-->
+    <div id="page2" class="row">
+        <div class="col-md-12">
+            <div class="card card-primary card-outline mb-4">
+                <div class="card-header">
+                    <table class="table table-bordered">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th rowspan="2">
+                                    <div class="d-flex justify-content-center align-items-center" style="height:100%;">
+                                        <img src="~/assets/img/riviana_logo.svg" height="60" alt="Logo" />
+                                    </div>
+                                </th>
+                                <th>Procedure</th>
+                                <th colspan="4">Pre-Start Up Checks - Mixing Area</th>
+                            </tr>
+                            <tr>
+
+                                <td>Document/Form No:</td>
+                                <td>F701</td>
+                                <td>Issue Date:</td>
+                                <td>07/03/2025</td>
+                                <td>Page 2 of 2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <h2 class="card-title fw-bold">Recipe Verification</h2>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="bg-body-secondary" style="width: 100px">Mixer No.</th>
+                                <th class="bg-body-secondary">Mixer Operator</th>
+                                <th class="bg-body-secondary">Verified Ingredients by:</th>
+                                <th class="bg-body-secondary">Non Conformance</th>
+                                <th class="bg-body-secondary">Corrective Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @* Row Mixer 1 *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Mixer 1</td>
+                                <td>
+                                    <input class="form-control" id="inpMxr1_1" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr1_2" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr1_3" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr1_4" />
+                                </td>
+                            </tr>
+
+                            @* Row Mixer 2 *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Mixer 2</td>
+                                <td>
+                                    <input class="form-control" id="inpMxr2_1" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr2_2" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr2_3" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr2_4" />
+                                </td>
+                            </tr>
+
+                            @* Row Mixer 3 *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Mixer 3</td>
+                                <td>
+                                    <input class="form-control" id="inpMxr3_1" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr3_2" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr3_3" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr3_4" />
+                                </td>
+                            </tr>
+
+                            @* Row Mixer 4 *@
+                            <tr>
+                                <td class="align-content-start fw-bold bg-body-secondary">Mixer 4</td>
+                                <td>
+                                    <input class="form-control" id="inpMxr4_1" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr4_2" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr4_3" />
+                                </td>
+                                <td>
+                                    <input class="form-control" id="inpMxr4_4" />
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="row mt-3">
+                        <div class="col-sm-12 mt-5">
+                            <div class="float-end d-flex align-items-center">
+                                <label class="me-2 fw-bold">QA:</label>
+                                <input type="text" class="form-control form-control-sm border-0 border-bottom border-dark" style="width:200px;" id="inpsign" readonly placeholder="Signature" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-sm-12 mb-2 text-center">
+                            <div>Version 3<span class="ms-5">07.03.2025</span></div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="saveme()">Save</button>
+                    <button type="button" class="btn btn-primary" id="btnPrintPreCheckList">Print</button>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!--end::Row-->
+</div>
+<!--end::Container-->
+<!-- Progress bar -->
+<div id="progressContainer" class="mt-3" style="display:none; width:300px;">
+    <div id="progressBar" style="height:20px; width:0%; background-color:#007bff; text-align:center; color:white;">
+        0%
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="~/js/prestartchecksmixingarea.js" asp-append-version="true"></script>
+
+    <script type="text/javascript">
+        function saveme(){
+            var r = $('#inpsign').val();
+            alert("Saved: " + r);};
+    </script>
+}
