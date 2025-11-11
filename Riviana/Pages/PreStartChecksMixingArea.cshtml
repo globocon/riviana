@@ -70,10 +70,10 @@
                             <tr>
                                 <th class="bg-body-secondary" style="width: 10px">Equipment</th>
                                 <th class="bg-body-secondary">Clean</br>(Pass/Failed)</th>
-                                <th class="bg-body-secondary">Foreign</br>Objects</br>Found ?(Y/N)</th>
+                                <th class="bg-body-secondary" style="width: 100px">Foreign</br>Objects</br>Found ?(Y/N)</th>
                                 <th class="bg-body-secondary">Pest</br>Activity</br>(Pass/Failed)</th>
                                 <th class="bg-body-secondary">Equipment</br>Integrity</br>(Pass/Failed)</th>
-                                <th class="bg-body-secondary" style="width: 250px">Non Conformance details:</th>
+                                <th class="bg-body-secondary" style="width: 200px">Non Conformance details:</th>
                                 <th class="bg-body-secondary">Corrective Action</th>
                                 <th class="bg-body-secondary" style="width: 180px">Operator</br><span class="fw-light small">Declaration that the issue </br>found is now fixed and </br>production can start</span></th>
                             </tr>
@@ -83,32 +83,53 @@
                             <tr>
                                 <td class="align-content-start fw-bold bg-body-secondary">Table</td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R101" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="TblCleanPF" id="Tbl01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="TblCleanPF" id="Tbl01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01CleanF">F</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>                                    
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="TblForeignYN" id="Tbl01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="TblForeignYN" id="Tbl01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01ForeignN">N</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>                                    
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="TblPestPF" id="Tbl01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="TblPestPF" id="Tbl01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01PestF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R102" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select class="form-select" id="validationCustomT1R103" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select class="form-select" id="validationCustomT1R104" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="TblEquipmentPF" id="Tbl01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="TblEquipmentPF" id="Tbl01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Tbl01EquipmentF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
                                     <textarea class="form-control" id="validationCustomT1R105"></textarea>
@@ -124,32 +145,53 @@
                             <tr>
                                 <td class="align-content-start fw-bold bg-body-secondary">Mixers</td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R201" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="MixersCleanPF" id="Mixers01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="MixersCleanPF" id="Mixers01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01CleanF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R202" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="MixersForeignYN" id="Mixers01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="MixersForeignYN" id="Mixers01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01ForeignN">N</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R203" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="MixersPestPF" id="Mixers01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="MixersPestPF" id="Mixers01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01PestF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R204" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="MixersEquipmentPF" id="Mixers01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="MixersEquipmentPF" id="Mixers01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Mixers01EquipmentF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
                                     <textarea class="form-control" id="validationCustomT1R205"></textarea>
@@ -166,32 +208,53 @@
                             <tr>
                                 <td class="align-content-start fw-bold bg-body-secondary">Oil Dispenser</td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R301" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="DispenserCleanPF" id="Dispenser01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="DispenserCleanPF" id="Dispenser01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01CleanF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R302" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="DispenserForeignYN" id="Dispenser01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="DispenserForeignYN" id="Dispenser01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01ForeignN">N</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R303" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="DispenserPestPF" id="Dispenser01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="DispenserPestPF" id="Dispenser01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01PestF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R304" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="DispenserEquipmentPF" id="Dispenser01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="DispenserEquipmentPF" id="Dispenser01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser01EquipmentF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
                                     <textarea class="form-control" id="validationCustomT1R305"></textarea>
@@ -208,32 +271,53 @@
                             <tr>
                                 <td class="align-content-start fw-bold bg-body-secondary">Spices/<br>Ingredients<br>Area</></td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R401" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="spicesCleanPF" id="spices01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="spicesCleanPF" id="spices01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01CleanF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R402" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="spicesForeignYN" id="spices01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="spicesForeignYN" id="spices01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01ForeignN">N</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R403" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="spicesPestPF" id="spices01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="spicesPestPF" id="spices01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01PestF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R404" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="spicesEquipmentPF" id="spices01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="spicesEquipmentPF" id="spices01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="spices01EquipmentF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
                                     <textarea class="form-control" id="validationCustomT1R405"></textarea>
@@ -250,32 +334,53 @@
                             <tr>
                                 <td class="align-content-start fw-bold bg-body-secondary">pH Station</></td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R501" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="PhCleanPF" id="Ph01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="PhCleanPF" id="Ph01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01CleanF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R502" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="PhForeignYN" id="Ph01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="PhForeignYN" id="Ph01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01ForeignN">N</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R503" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="PhPestPF" id="Ph01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="PhPestPF" id="Ph01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01PestF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R504" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="PhEquipmentPF" id="Ph01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="PhEquipmentPF" id="Ph01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Ph01EquipmentF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
                                     <textarea class="form-control" id="validationCustomT1R505"></textarea>
@@ -292,32 +397,53 @@
                             <tr>
                                 <td class="align-content-start fw-bold bg-body-secondary">Oil Dispenser</td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R601" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2CleanPF" id="Dispenser201CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2CleanPF" id="Dispenser201CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201CleanF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R602" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2ForeignYN" id="Dispenser201ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2ForeignYN" id="Dispenser201ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201ForeignN">N</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R603" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2PestPF" id="Dispenser201PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2PestPF" id="Dispenser201PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201PestF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R604" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2EquipmentPF" id="Dispenser201EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="Dispenser2EquipmentPF" id="Dispenser201EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Dispenser201EquipmentF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
                                     <textarea class="form-control" id="validationCustomT1R605"></textarea>
@@ -368,32 +494,53 @@
                             <tr>
                                 <td class="align-content-start fw-bold bg-body-secondary">Walls</td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R701" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="WallCleanPF" id="Wall01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="WallCleanPF" id="Wall01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01CleanF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R702" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="WallForeignYN" id="Wall01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="WallForeignYN" id="Wall01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01ForeignN">N</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R703" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="WallPestPF" id="Wall01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="WallPestPF" id="Wall01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01PestF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R704" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="WallEquipmentPF" id="Wall01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="WallEquipmentPF" id="Wall01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Wall01EquipmentF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
                                     <textarea class="form-control" id="validationCustomT1R705"></textarea>
@@ -410,32 +557,53 @@
                             <tr>
                                 <td class="align-content-start fw-bold bg-body-secondary">Surroundings</td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R801" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="SurroundCleanPF" id="Surround01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="SurroundCleanPF" id="Surround01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01CleanF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R802" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="SurroundForeignYN" id="Surround01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="SurroundForeignYN" id="Surround01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01ForeignN">N</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R803" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="SurroundPestPF" id="Surround01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="SurroundPestPF" id="Surround01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01PestF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R804" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="SurroundEquipmentPF" id="Surround01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="SurroundEquipmentPF" id="Surround01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Surround01EquipmentF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
                                     <textarea class="form-control" id="validationCustomT1R805"></textarea>
@@ -452,32 +620,53 @@
                             <tr>
                                 <td class="align-content-start fw-bold bg-body-secondary">Floor</td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R901" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="FloorCleanPF" id="Floor01CleanP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01CleanP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="FloorCleanPF" id="Floor01CleanF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01CleanF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R902" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="FloorForeignYN" id="Floor01ForeignY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01ForeignY">Y</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="FloorForeignYN" id="Floor01ForeignN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01ForeignN">N</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R903" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="FloorPestPF" id="Floor01PestP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01PestP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="FloorPestPF" id="Floor01PestF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01PestF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <select class="form-select" id="validationCustomT1R904" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="true">Pass</option>
-                                        <option value="false">Failed</option>
-                                    </select>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="FloorEquipmentPF" id="Floor01EquipmentP" value="PASS" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01EquipmentP">P</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="FloorEquipmentPF" id="Floor01EquipmentF" value="FAIL" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="Floor01EquipmentF">F</label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
                                     <textarea class="form-control" id="validationCustomT1R905"></textarea>
@@ -499,35 +688,46 @@
                             <div class="input-group">
                                 <label>Food Contact Surfaces Sanitised ?</label>
                                 <div class="form-check">
-                                    <select class="form-select" id="validationCustomT1R10011" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="Y">Yes</option>
-                                        <option value="N">No</option>
-                                    </select>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check me-1">
+                                            <input class="form-check-input" type="checkbox" name="FoodContactYN" id="FoodContactY" value="YES" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="FoodContactY">YES </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="FoodContactYN" id="FoodContactN" value="NO" onclick="toggleCheckbox(this)" />
+                                            <label class="form-check-label" for="FoodContactN">NO</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12 mb-2">
                             <div class="input-group">
                                 <label>Package Material and Raw Material Available ?</label>
-                                <div class="form-check">
-                                    <select class="form-select" id="validationCustomT1R10022" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="Y">Yes</option>
-                                        <option value="N">No</option>
-                                    </select>
+                                <div class="d-flex align-items-center">
+                                    <div class="form-check me-1">
+                                        <input class="form-check-input" type="checkbox" name="RawMaterialYN" id="RawMaterialY" value="YES" onclick="toggleCheckbox(this)" />
+                                        <label class="form-check-label" for="RawMaterialY">YES </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="RawMaterialYN" id="RawMaterialN" value="NO" onclick="toggleCheckbox(this)" />
+                                        <label class="form-check-label" for="RawMaterialN">NO</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6 mb-2">
                             <div class="input-group">
                                 <label>Traceability Code Recorded and Correct ?</label>
-                                <div class="form-check">
-                                    <select class="form-select" id="validationCustomT1R10022" required>
-                                        <option selected value="">Choose...</option>
-                                        <option value="Y">Yes</option>
-                                        <option value="N">No</option>
-                                    </select>
+                                <div class="d-flex align-items-center">
+                                    <div class="form-check me-1">
+                                        <input class="form-check-input" type="checkbox" name="TraceabilityYN" id="TraceabilityY" value="YES" onclick="toggleCheckbox(this)" />
+                                        <label class="form-check-label" for="TraceabilityY">YES </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="TraceabilityYN" id="TraceabilityN" value="NO" onclick="toggleCheckbox(this)" />
+                                        <label class="form-check-label" for="TraceabilityN">NO</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
