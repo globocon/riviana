@@ -1,0 +1,118 @@
+@page
+@model Riviana.Pages.Mixing.Reports.ToolsRegisterLogModel
+@{
+    ViewData["Title"] = "Tools Register Report";
+}
+
+<div class="app-content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="mb-0">Tools Register Report</h3>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                    <li class="breadcrumb-item"><a href="/Index">Home</a></li>
+                    <li class="breadcrumb-item">Mixing</li>
+                    <li class="breadcrumb-item"><a href="/Mixing/Reports/Index">Reports</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tools Register</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="app-content">
+    <div class="container-fluid">
+         <!-- Filters -->
+         <div class="card mb-4 shadow-sm border-0">
+             <div class="card-body">
+                 <form method="get" class="row g-3 align-items-end">
+                     <div class="col-md-3">
+                         <label for="FilterDate" class="form-label fw-bold small text-muted">Filter by Date</label>
+                         <input type="date" class="form-control" id="FilterDate" name="FilterDate" value="@Model.FilterDate?.ToString("yyyy-MM-dd")">
+                     </div>
+                     <div class="col-md-3">
+                         <button type="submit" class="btn btn-success text-white w-100"><i class="bi bi-filter me-1"></i> Apply Filter</button>
+                     </div>
+                      <div class="col-md-6 text-md-end">
+                         <div class="btn-group">
+                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-excel me-1"></i> Export CSV</button>
+                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-pdf me-1"></i> Export PDF</button>
+                         </div>
+                    </div>
+                 </form>
+             </div>
+         </div>
+
+         <!-- Grid -->
+         <div class="card shadow-sm border-0">
+             <div class="card-header bg-white py-3">
+                 <h5 class="card-title mb-0 fw-bold text-secondary">Tool Usage Records</h5>
+             </div>
+             <div class="table-responsive">
+                 <table class="table table-hover align-middle mb-0">
+                     <thead class="table-light">
+                         <tr>
+                             <th>Date</th>
+                             <th>Product</th>
+                             <th>Batch / Load</th>
+                             <th>Tools Used</th>
+                             <th>Operator</th>
+                             <th class="text-end">Actions</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         @foreach (var item in Model.Logs)
+                         {
+                             <tr>
+                                 <td>@item.Date.ToShortDateString()</td>
+                                 <td class="fw-bold text-success">@item.Product</td>
+                                 <td><span class="badge bg-light text-dark border">@item.BatchLoad</span></td>
+                                 <td>@item.ToolCount Tools</td>
+                                 <td>@item.Operator</td>
+                                 <td class="text-end">
+                                     <button class="btn btn-sm btn-light border" data-bs-toggle="modal" data-bs-target="#detailsModal"
+                                         onclick="loadDetails('@item.Date.ToShortDateString()', '@item.Product', '@item.BatchLoad')">
+                                         <i class="bi bi-eye"></i> View
+                                     </button>
+                                 </td>
+                             </tr>
+                         }
+                     </tbody>
+                 </table>
+             </div>
+         </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <h5 class="modal-title fw-bold">Tool List</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted small mb-3">Tools checked out for <strong id="modalProduct" class="text-dark"></strong> (Batch: <span id="modalBatch"></span>)</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="bi bi-wrench me-2 text-secondary"></i> Spanner 10mm</li>
+                    <li class="list-group-item"><i class="bi bi-hammer me-2 text-secondary"></i> Mallet</li>
+                    <li class="list-group-item"><i class="bi bi-scissors me-2 text-secondary"></i> Cutter</li>
+                    <li class="list-group-item"><i class="bi bi-bucket me-2 text-secondary"></i> Scoop No. 4</li>
+                </ul>
+            </div>
+             <div class="modal-footer border-top-0 pt-0">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function loadDetails(date, product, batch) {
+         document.getElementById('modalProduct').innerText = product;
+         document.getElementById('modalBatch').innerText = batch;
+    }
+</script>

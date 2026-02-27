@@ -1,0 +1,33 @@
+@model dynamic
+@{
+    var name = Model.Name;
+    var freq = Model.Freq;
+    var level = Model.Level;
+    // Generate a safe ID base from the name
+    var idBase = name.Replace(" ", "").Replace("-", "").Replace(",", "").Replace("/", "").Replace("&", "");
+}
+<tr>
+    <td class="sticky-col equipment-col">@name</td>
+    <td class="p-0">
+        <select class="cleaning-input border-0 w-100 h-100 text-center" data-id="@(idBase)_freq" style="background:transparent; appearance:none;">
+            <!option value="Daily" @(freq == "Daily" ? "selected" : "")>Daily</!option>
+            <!option value="Weekly" @(freq == "Weekly" ? "selected" : "")>Weekly</!option>
+            <!option value="Fortnightly" @(freq == "Fortnightly" ? "selected" : "")>Fortnightly</!option>
+            <!option value="Monthly" @(freq == "Monthly" ? "selected" : "")>Monthly</!option>
+        </select>
+    </td>
+    <td class="p-0">
+         <select class="cleaning-input border-0 w-100 h-100 text-center" data-id="@(idBase)_level" style="background:transparent; appearance:none;">
+            <!option value="1" @(level == "1" ? "selected" : "")>1</!option>
+            <!option value="2" @(level == "2" ? "selected" : "")>2</!option>
+            <!option value="3" @(level == "3" ? "selected" : "")>3</!option>
+        </select>
+    </td>
+    <td>Operator</td> <!-- Hardcoded for now per image -->
+    @for (int i = 1; i <= 31; i++)
+    {
+        <td class="p-0">
+            <input type="text" class="cleaning-input" data-id="@(idBase)_@i" maxlength="2" />
+        </td>
+    }
+</tr>

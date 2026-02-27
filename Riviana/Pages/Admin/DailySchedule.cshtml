@@ -1,0 +1,197 @@
+@page
+@model Riviana.Pages.Admin.DailyScheduleModel
+@{
+    ViewData["Title"] = "Daily Schedule";
+}
+
+<!--begin::App Content Header-->
+<div class="app-content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="mb-0">Daily Production Schedule</h3>
+            </div>
+            <div class="col-sm-6">
+                <div class="float-sm-end">
+                     <button type="button" class="btn btn-primary me-2" id="btnSyncSapSchedule" onclick="syncScheduleWithSap()">
+                        <i class="bi bi-arrow-repeat me-1"></i> Synchronize Schedule with SAP
+                    </button>
+                    <ol class="breadcrumb d-inline-flex">
+                        <li class="breadcrumb-item"><a href="/Index">Home</a></li>
+                        <li class="breadcrumb-item">Admin</li>
+                        <li class="breadcrumb-item active" aria-current="page">Daily Schedule</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end::App Content Header-->
+
+<!--begin::App Content-->
+<div class="app-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                
+                <div class="card shadow-none"> 
+                    <div class="card-body p-0 table-responsive">
+                        
+                        <!-- Custom Style for Yellow Header Table -->
+                        <style>
+                            .schedule-table th {
+                                background-color: #ffc107 !important; /* Warning Yellow */
+                                color: #000 !important;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                                border: 1px solid #000;
+                                vertical-align: middle;
+                            }
+                            .schedule-table td {
+                                border: 1px solid #000; /* Strong borders */
+                                vertical-align: middle;
+                                background-color: #fff;
+                            }
+                            .section-header {
+                                background-color: #ffc107;
+                                font-weight: bold;
+                                text-align: center;
+                                border: 1px solid #000;
+                            }
+                            .link-blue {
+                                color: #0d6efd;
+                                text-decoration: underline;
+                                cursor: pointer;
+                            }
+                        </style>
+
+                        <table class="table schedule-table table-bordered text-center mb-0">
+                            <!-- MIXING SECTION -->
+                            <thead>
+                                <tr>
+                                    <th style="width: 40%; text-align: left;">DATE - @Model.CurrentDate &nbsp;&nbsp;&nbsp; MIXING</th>
+                                    <th style="width: 15%">LOADS</th>
+                                    <th style="width: 15%">Mixer</th>
+                                    <th style="width: 15%">Start Time</th>
+                                    <th style="width: 15%">End Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.MixingSchedule)
+                                {
+                                    <tr>
+                                        <td class="text-start">
+                                            <span class="link-blue">@item.ProductId</span> @item.ProductName
+                                        </td>
+                                        <td>@item.LoadBatch</td>
+                                        <td>@item.Mixer</td>
+                                        <td><span class="link-blue">@item.StartTime</span></td>
+                                        <td><span class="link-blue">@item.EndTime</span></td>
+                                    </tr>
+                                }
+                                <!-- Spacer Row or Empty Row if needed -->
+                                <tr style="height: 10px; border: none;"><td colspan="5" style="border:none; background: transparent;"></td></tr>
+                            </tbody>
+
+                            <!-- PACKING SECTION -->
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center;">PACKING</th>
+                                    <th>CTNS PLANNED</th>
+                                    <th>Pack Line</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 @foreach (var item in Model.PackingSchedule)
+                                {
+                                    <tr>
+                                        <td class="text-start">
+                                            <span class="link-blue">@item.ProductId</span> @item.ProductName
+                                        </td>
+                                        <td>@item.CtnsPlanned</td>
+                                        <td>@item.PackLine</td>
+                                        <td><span class="link-blue">@item.StartTime</span></td>
+                                        <td><span class="link-blue">@item.EndTime</span></td>
+                                    </tr>
+                                }
+                                <tr style="height: 10px; border: none;"><td colspan="5" style="border:none; background: transparent;"></td></tr>
+                            </tbody>
+
+                            <!-- SACHET SECTION (Placeholder) -->
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center;">SACHET</th>
+                                    <th style="background-color: #ffc107 !important;"></th> <!-- Empty Header Cell matching color -->
+                                    <th style="background-color: #ffc107 !important;"></th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                </tr>
+                            </thead>
+                             <tbody>
+                                <tr style="height: 50px;">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                 <tr style="height: 10px; border: none;"><td colspan="5" style="border:none; background: transparent;"></td></tr>
+                            </tbody>
+
+                            <!-- GLASS ROOM SECTION -->
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center;">GLASS ROOM</th>
+                                    <th>CTNS PLANNED</th>
+                                    <th style="background-color: #ffc107 !important;"></th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 @foreach (var item in Model.GlassRoomSchedule)
+                                {
+                                    <tr>
+                                        <td class="text-start">
+                                            <span class="link-blue">@item.ProductId</span> @item.ProductName
+                                        </td>
+                                        <td>@item.CtnsPlanned</td>
+                                        <td>@item.GlassRoom</td>
+                                        <td><span class="link-blue">@item.StartTime</span></td>
+                                        <td><span class="link-blue">@item.EndTime</span></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--end::App Content-->
+
+@section Scripts {
+    <script>
+        function syncScheduleWithSap() {
+            var btn = document.getElementById('btnSyncSapSchedule');
+            var originalText = btn.innerHTML;
+            
+            // Show loading state
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Syncing SAP...';
+            btn.disabled = true;
+
+            // Simulate API call
+            setTimeout(function() {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Daily Schedule successfully synchronized from SAP!');
+                location.reload(); 
+            }, 2000);
+        }
+    </script>
+}
