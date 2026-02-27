@@ -24,10 +24,293 @@
     <!--end::Container-->
 </div>
 <!--end::App Content Header-->
-<div class="text-center" style="height:1000px">
-    <h1 class="display-4">Welcome</h1>
-   
 
+<!--begin::App Content-->
+<div class="app-content">
+    <!--begin::Container-->
+    <div class="container-fluid">
+        <!--begin::Quick Stats Row-->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm bg-primary text-white overflow-hidden">
+                    <div class="card-body p-4 position-relative">
+                        <div class="row align-items-center position-relative z-1">
+                            <div class="col-md-8">
+                                <h2 class="fw-bold mb-1">Welcome back, Alexander!</h2>
+                                <p class="mb-0 opacity-75">Here's what's happening on the floor today.</p>
+                            </div>
+                            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                <div class="d-inline-block text-start me-4">
+                                    <h3 class="mb-0 fw-bold">Active</h3>
+                                    <small class="opacity-75">System Status</small>
+                                </div>
+                                <div class="d-inline-block text-start">
+                                    <h3 class="mb-0 fw-bold">3</h3>
+                                    <small class="opacity-75">Active Lines</small>
+                                </div>
+                            </div>
+                        </div>
+                         <i class="bi bi-activity position-absolute top-50 end-0 translate-middle-y me-5 opacity-25" style="font-size: 8rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end::Quick Stats Row-->
 
-  
+        <!--begin::Row - Main Tiles-->
+        <div class="row">
+            <!-- Mixing Tile -->
+            <div class="col-lg-3 col-sm-6 col-12">
+                <!-- small box -->
+                <div class="small-box text-bg-primary cursor-pointer" onclick="toggleSection('mixing-section')">
+                    <div class="inner">
+                        <h3>Mixing</h3>
+                        <p>Area Operations</p>
+                    </div>
+                    <div class="icon">
+                        <i class="bi bi-pencil-square p-2"></i>
+                    </div>
+                    <a href="javascript:void(0)" class="small-box-footer">More info <i class="bi bi-arrow-right-circle"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            
+            <!-- Prep Tile -->
+            <div class="col-lg-3 col-sm-6 col-12">
+                <!-- small box -->
+                <div class="small-box text-bg-success cursor-pointer" onclick="toggleSection('prep-section')">
+                    <div class="inner">
+                        <h3>Prep</h3>
+                        <p>Preparation Area</p>
+                    </div>
+                    <div class="icon">
+                        <i class="bi bi-table p-2"></i>
+                    </div>
+                    <a href="javascript:void(0)" class="small-box-footer">More info <i class="bi bi-arrow-right-circle"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            
+            <!-- Packing Tile -->
+            <div class="col-lg-3 col-sm-6 col-12">
+                <!-- small box -->
+                <div class="small-box text-bg-warning cursor-pointer" onclick="toggleSection('packing-section')">
+                    <div class="inner">
+                        <h3>Packing</h3>
+                        <p>Packing Area</p>
+                    </div>
+                    <div class="icon">
+                        <i class="bi bi-box-seam-fill p-2"></i>
+                    </div>
+                    <a href="javascript:void(0)" class="small-box-footer">More info <i class="bi bi-arrow-right-circle"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            
+            <!-- Admin Tile -->
+            <div class="col-lg-3 col-sm-6 col-12">
+                <!-- small box -->
+                <div class="small-box text-bg-danger cursor-pointer" onclick="toggleSection('admin-section')">
+                    <div class="inner">
+                        <h3>Admin</h3>
+                        <p>Administration</p>
+                    </div>
+                    <div class="icon">
+                        <i class="bi bi-clipboard-fill p-2"></i>
+                    </div>
+                    <a href="javascript:void(0)" class="small-box-footer">More info <i class="bi bi-arrow-right-circle"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+        <!--end::Row-->
+
+        <!--begin::Sub-Menus-->
+        <div id="sub-menus-container">
+            
+            <!-- Mixing Section -->
+            <div id="mixing-section" class="sub-menu-section" style="display: none;">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="bi bi-pencil-square me-2"></i>Mixing Area Operations</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" onclick="closeSection('mixing-section')"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                <a href="PreStartChecksMixingArea" class="btn btn-outline-primary w-100 p-3 text-start">
+                                    <i class="bi bi-check-circle-fill me-2"></i> Pre Start Checks
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                <a href="ChangeOverMixingArea" class="btn btn-outline-primary w-100 p-3 text-start">
+                                    <i class="bi bi-arrow-repeat me-2"></i> Change Over
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                <a href="ToolsRegister" class="btn btn-outline-primary w-100 p-3 text-start">
+                                    <i class="bi bi-tools me-2"></i> Tools Register
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                <a href="PhChecks" class="btn btn-outline-primary w-100 p-3 text-start">
+                                    <i class="bi bi-droplet-half me-2"></i> Ph Value
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                <a href="phmetercalibration" class="btn btn-outline-primary w-100 p-3 text-start">
+                                    <i class="bi bi-speedometer2 me-2"></i> Ph Calibration
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                <a href="#" class="btn btn-outline-primary w-100 p-3 text-start">
+                                    <i class="bi bi-stars me-2"></i> Cleaning
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                <a href="/Mixing/Reports/Index" class="btn btn-outline-secondary w-100 p-3 text-start">
+                                    <i class="bi bi-clock-history me-2"></i> History / Reports
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prep Section -->
+            <div id="prep-section" class="sub-menu-section" style="display: none;">
+                <div class="card card-success card-outline">
+                     <div class="card-header">
+                        <h3 class="card-title"><i class="bi bi-table me-2"></i>Prep Area</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" onclick="closeSection('prep-section')"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="lead">Prep area functionality coming soon.</p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Packing Section -->
+            <div id="packing-section" class="sub-menu-section" style="display: none;">
+                <div class="card card-warning card-outline">
+                     <div class="card-header">
+                        <h3 class="card-title"><i class="bi bi-box-seam-fill me-2"></i>Packing Area</h3>
+                        <div class="card-tools">
+                             <button type="button" class="btn btn-tool" onclick="closeSection('packing-section')"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="lead">Packing area functionality coming soon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Section -->
+            <div id="admin-section" class="sub-menu-section" style="display: none;">
+                <div class="card card-danger card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="bi bi-clipboard-fill me-2"></i>Administration</h3>
+                         <div class="card-tools">
+                            <button type="button" class="btn btn-tool" onclick="closeSection('admin-section')"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                         <div class="row">
+                            <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                <a href="#" class="btn btn-outline-danger w-100 p-3 text-start">
+                                    <i class="bi bi-circle me-2"></i> Sodium / Potassium qty
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                <a href="#" class="btn btn-outline-danger w-100 p-3 text-start">
+                                    <i class="bi bi-circle me-2"></i> Ingredients
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                <a href="/Admin/Products" class="btn btn-outline-danger w-100 p-3 text-start">
+                                    <i class="bi bi-circle me-2"></i> Product
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-12 mb-3">
+                                <a href="/Admin/DailySchedule" class="btn btn-outline-danger w-100 p-3 text-start">
+                                    <i class="bi bi-circle me-2"></i> Daily Schedule
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--end::Sub-Menus-->
+    </div>
+    <!--end::Container-->
 </div>
+<!--end::App Content-->
+
+@section Scripts {
+    <script>
+        function toggleSection(sectionId) {
+            // Hide all sections first
+            var sections = document.getElementsByClassName('sub-menu-section');
+            for (var i = 0; i < sections.length; i++) {
+                if (sections[i].id !== sectionId) {
+                    sections[i].style.display = 'none';
+                }
+            }
+
+            // Toggle specific section
+            var section = document.getElementById(sectionId);
+            if (section.style.display === 'none') {
+                section.style.display = 'block';
+                // Small delay to ensure display:block is rendered before scrolling
+                setTimeout(function() {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            } else {
+                section.style.display = 'none';
+            }
+        }
+        
+         function closeSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.style.display = 'none';
+        }
+    </script>
+    
+    <style>
+        .cursor-pointer {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .cursor-pointer:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+        }
+        .small-box {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        .small-box .icon {
+            color: rgba(0, 0, 0, 0.15);
+            z-index: 0;
+        }
+        .small-box:hover .icon {
+            font-size: 6rem; /* Zoom effect on icon */
+        }
+        .btn-outline-primary, .btn-outline-secondary, .btn-outline-danger {
+            border-width: 2px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .btn-outline-primary:hover, .btn-outline-secondary:hover, .btn-outline-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+    </style>
+}

@@ -1,0 +1,155 @@
+@page
+@model Riviana.Pages.Mixing.Reports.ChangeOverLogModel
+@{
+    ViewData["Title"] = "Change Over Report";
+}
+
+<div class="app-content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="mb-0">Change Over Report</h3>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                    <li class="breadcrumb-item"><a href="/Index">Home</a></li>
+                    <li class="breadcrumb-item">Mixing</li>
+                    <li class="breadcrumb-item"><a href="/Mixing/Reports/Index">Reports</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Change Over</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="app-content">
+    <div class="container-fluid">
+        <!-- Filters -->
+        <div class="card mb-4 shadow-sm border-0">
+            <div class="card-body">
+                <form method="get" class="row g-3 align-items-end">
+                    <div class="col-md-3">
+                        <label for="FilterDate" class="form-label fw-bold small text-muted">Filter by Date</label>
+                        <input type="date" class="form-control" id="FilterDate" name="FilterDate" value="@Model.FilterDate?.ToString("yyyy-MM-dd")">
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-warning text-white w-100"><i class="bi bi-filter me-1"></i> Apply Filter</button>
+                    </div>
+                     <div class="col-md-6 text-md-end">
+                         <div class="btn-group">
+                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-excel me-1"></i> Export CSV</button>
+                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-pdf me-1"></i> Export PDF</button>
+                         </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Data Grid -->
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white py-3">
+                <h5 class="card-title mb-0 fw-bold text-secondary">Change Over Records</h5>
+            </div>
+             <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Date</th>
+                            <th>Product</th>
+                            <th>Mixer</th>
+                            <th>Time</th>
+                            <th>Operator</th>
+                            <th>Status</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Logs)
+                        {
+                            <tr>
+                                <td>@item.Date.ToShortDateString()</td>
+                                <td class="fw-bold text-primary">@item.Product</td>
+                                <td>@item.Mixer</td>
+                                <td>@item.StartTime - @item.EndTime</td>
+                                <td>
+                                     <div class="d-flex align-items-center">
+                                        <div class="avatar-circle bg-warning bg-opacity-10 text-warning me-2 rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; font-size: 0.8rem;">
+                                            @item.Operator.Substring(0, 1)
+                                        </div>
+                                        @item.Operator
+                                    </div>
+                                </td>
+                                <td>
+                                    @if(item.Status == "Approved")
+                                    {
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle rounded-3 px-2 py-1"><i class="bi bi-check-circle-fill me-1"></i> Approved</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle rounded-3 px-2 py-1"><i class="bi bi-hourglass-split me-1"></i> Pending</span>
+                                    }
+                                </td>
+                                <td class="text-end">
+                                    <button class="btn btn-sm btn-light border" data-bs-toggle="modal" data-bs-target="#detailsModal"
+                                        onclick="loadDetails('@item.Date.ToShortDateString()', '@item.Product', '@item.Mixer', '@item.Operator')">
+                                        <i class="bi bi-eye"></i> View
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <h5 class="modal-title fw-bold">Change Over Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="text-muted">Date</span>
+                        <strong id="modalDate"></strong>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="text-muted">Product</span>
+                        <strong id="modalProduct" class="text-primary"></strong>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="text-muted">Mixer</span>
+                        <strong id="modalMixer"></strong>
+                    </li>
+                     <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="text-muted">Operator</span>
+                        <strong id="modalOperator"></strong>
+                    </li>
+                </ul>
+                <div class="alert alert-light border">
+                    <small class="text-muted d-block fw-bold mb-1">Checklist Status:</small>
+                    <i class="bi bi-check-circle-fill text-success me-1"></i> Line Cleared<br/>
+                    <i class="bi bi-check-circle-fill text-success me-1"></i> Material Verified<br/>
+                    <i class="bi bi-check-circle-fill text-success me-1"></i> Tools Validated
+                </div>
+            </div>
+             <div class="modal-footer border-top-0 pt-0">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function loadDetails(date, product, mixer, operator) {
+        document.getElementById('modalDate').innerText = date;
+        document.getElementById('modalProduct').innerText = product;
+        document.getElementById('modalMixer').innerText = mixer;
+        document.getElementById('modalOperator').innerText = operator;
+    }
+</script>

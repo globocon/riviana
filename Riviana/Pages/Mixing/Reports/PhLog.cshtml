@@ -1,0 +1,162 @@
+@page
+@model Riviana.Pages.Mixing.Reports.PhLogModel
+@{
+    ViewData["Title"] = "pH Logs Report";
+}
+
+<div class="app-content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="mb-0">pH Logs Report</h3>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                    <li class="breadcrumb-item"><a href="/Index">Home</a></li>
+                    <li class="breadcrumb-item">Mixing</li>
+                    <li class="breadcrumb-item"><a href="/Mixing/Reports/Index">Reports</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">pH Logs</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="app-content">
+    <div class="container-fluid">
+        <!-- Filters -->
+         <div class="card mb-4 shadow-sm border-0">
+             <div class="card-body">
+                 <form method="get" class="row g-3 align-items-end">
+                     <div class="col-md-3">
+                         <label for="FilterDate" class="form-label fw-bold small text-muted">Filter by Date</label>
+                         <input type="date" class="form-control" id="FilterDate" name="FilterDate" value="@Model.FilterDate?.ToString("yyyy-MM-dd")">
+                     </div>
+                     <div class="col-md-3">
+                         <button type="submit" class="btn btn-info text-white w-100"><i class="bi bi-filter me-1"></i> Apply Filter</button>
+                     </div>
+                     <div class="col-md-6 text-md-end">
+                         <div class="btn-group">
+                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-excel me-1"></i> Export CSV</button>
+                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-file-earmark-pdf me-1"></i> Export PDF</button>
+                         </div>
+                    </div>
+                 </form>
+             </div>
+         </div>
+
+         <!-- Data Grid -->
+         <div class="card shadow-sm border-0">
+             <div class="card-header bg-white py-3">
+                 <h5 class="card-title mb-0 fw-bold text-secondary">pH & Calibration Records</h5>
+             </div>
+             <div class="table-responsive">
+                 <table class="table table-hover align-middle mb-0">
+                     <thead class="table-light">
+                         <tr>
+                             <th>Date</th>
+                             <th>Type</th>
+                             <th>Result / Value</th>
+                             <th>Checked By</th>
+                             <th>Status</th>
+                             <th class="text-end">Actions</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         @foreach (var item in Model.Logs)
+                         {
+                             <tr>
+                                 <td>@item.Date.ToShortDateString()</td>
+                                 <td>
+                                     @if(item.Type == "Calibration")
+                                     {
+                                         <span class="badge bg-purple-subtle text-purple border border-purple-subtle"><i class="bi bi-rulers me-1"></i> Calibration</span>
+                                     }
+                                     else
+                                     {
+                                         <span class="badge bg-blue-subtle text-blue border border-blue-subtle"><i class="bi bi-activity me-1"></i> Check</span>
+                                     }
+                                 </td>
+                                 <td class="fw-bold">@item.Value</td>
+                                 <td>@item.CheckedBy</td>
+                                 <td>
+                                     @if(item.Status == "Pass")
+                                     {
+                                         <span class="badge bg-success-subtle text-success border border-success-subtle rounded-3 px-2 py-1"><i class="bi bi-check-circle-fill me-1"></i> Pass</span>
+                                     }
+                                     else
+                                     {
+                                         <span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-3 px-2 py-1"><i class="bi bi-exclamation-triangle-fill me-1"></i> Fail</span>
+                                     }
+                                 </td>
+                                 <td class="text-end">
+                                     <button class="btn btn-sm btn-light border" data-bs-toggle="modal" data-bs-target="#detailsModal"
+                                         onclick="loadDetails('@item.Date.ToShortDateString()', '@item.Type', '@item.Value', '@item.CheckedBy')">
+                                         <i class="bi bi-eye"></i> View
+                                     </button>
+                                 </td>
+                             </tr>
+                         }
+                     </tbody>
+                 </table>
+             </div>
+         </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+             <div class="modal-header border-bottom-0">
+                <h5 class="modal-title fw-bold">Reading Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <small class="text-muted d-block">Type</small>
+                        <strong id="modalType"></strong>
+                    </div>
+                     <div class="col-6 mb-3">
+                        <small class="text-muted d-block">Result</small>
+                        <strong id="modalValue" class="fs-5 text-primary"></strong>
+                    </div>
+                     <div class="col-6 mb-3">
+                        <small class="text-muted d-block">Operator</small>
+                        <strong id="modalOperator"></strong>
+                    </div>
+                     <div class="col-6 mb-3">
+                        <small class="text-muted d-block">Time</small>
+                        <strong>08:30 AM</strong>
+                    </div>
+                </div>
+                 <div class="bg-light p-3 rounded mt-2">
+                    <small class="text-muted d-block fw-bold mb-1">Standard Readings:</small>
+                    <div class="d-flex justify-content-between">
+                        <span>pH 4.0: <span class="fw-bold">4.01</span></span>
+                        <span>pH 7.0: <span class="fw-bold">7.00</span></span>
+                    </div>
+                </div>
+            </div>
+             <div class="modal-footer border-top-0 pt-0">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-purple-subtle { background-color: #e9ecef; color: #6f42c1; border-color: #d6d8db; } /* Custom fallback if needed */
+    .text-purple { color: #6f42c1; }
+     .bg-blue-subtle { background-color: #cfe2ff; color: #084298; border-color: #b6d4fe; }
+    .text-blue { color: #084298; }
+</style>
+
+<script>
+    function loadDetails(date, type, value, operator) {
+        document.getElementById('modalType').innerText = type;
+        document.getElementById('modalValue').innerText = value;
+        document.getElementById('modalOperator').innerText = operator;
+    }
+</script>

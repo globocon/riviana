@@ -1,0 +1,261 @@
+@page
+@model Riviana.Pages.CleaningModel
+@{
+    ViewData["Title"] = "Cleaning Checklist";
+}
+
+<style>
+    .cleaning-table th, .cleaning-table td {
+        text-align: center;
+        vertical-align: middle;
+        font-size: 0.8em;
+        padding: 4px;
+        border: 1px solid #dee2e6;
+    }
+
+    .cleaning-table th {
+        background-color: #f8f9fa;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .cleaning-table input {
+        width: 100%;
+        border: none;
+        text-align: center;
+        background: transparent;
+    }
+     .cleaning-table input:focus {
+        background: #e8f0fe;
+        outline: none;
+    }
+
+    .row-header {
+        text-align: left !important;
+        font-weight: 600;
+        background-color: #e9ecef !important;
+    }
+
+    .sticky-col {
+        position: sticky;
+        left: 0;
+        background-color: #fff;
+        z-index: 5;
+    }
+    
+    .equipment-col {
+        min-width: 150px; /* Reduced from 200px */
+        width: 15%; /* Allow it to be somewhat relative to screen width */
+        text-align: left !important;
+        font-size: 0.75em; /* Make text slightly smaller to fit */
+    }
+
+    /* Print styles */
+    @@media print {
+        .no-print {
+            display: none !important;
+        }
+        .card {
+            border: none !important;
+            box-shadow: none !important;
+        }
+        .app-header, .app-sidebar, .app-footer {
+            display: none !important;
+        }
+        .app-wrapper {
+            margin-left: 0 !important;
+        }
+        .cleaning-table {
+            font-size: 10px;
+        }
+    }
+</style>
+
+<div class="app-content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="mb-0">Mixing Area Cleaning Record</h3>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                    <li class="breadcrumb-item"><a href="/Index">Home</a></li>
+                     <li class="breadcrumb-item">Mixing</li>
+                    <li class="breadcrumb-item active" aria-current="page">Cleaning</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="app-content">
+    <div class="container-fluid">
+        <div class="card card-outline card-primary">
+            <div class="card-header no-print">
+                <div class="card-title">
+                     <div class="d-flex align-items-center">
+                        <label class="me-2 mb-0">Select Month:</label>
+                        <input type="month" id="monthSelector" class="form-control form-control-sm" style="width: auto;">
+                    </div>
+                </div>
+                 <div class="card-tools">
+                    <button type="button" class="btn btn-tool" onclick="window.print()">
+                        <i class="bi bi-printer"></i> Print
+                    </button>
+                     <button type="button" class="btn btn-tool" id="btnSave" onclick="saveData()">
+                        <i class="bi bi-save"></i> Save (Local)
+                    </button>
+                    <button type="button" class="btn btn-tool" onclick="clearData()">
+                        <i class="bi bi-eraser"></i> Clear
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive" style="height: 75vh;">
+                    <table class="table table-bordered table-hover cleaning-table text-nowrap mb-0" id="cleaningTable">
+                        <thead>
+                            <tr>
+                                <th class="sticky-col equipment-col" rowspan="2">Equipments</th>
+                                <th rowspan="2" style="width: 60px;">Freq.</th>
+                                <th rowspan="2" style="width: 50px;">Level</th>
+                                <th rowspan="2" style="width: 80px;">By</th>
+                                <th colspan="31">Date</th>
+                            </tr>
+                            <tr>
+                                @for (int i = 1; i <= 31; i++)
+                                {
+                                    <th style="width: 30px;">@i</th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <!-- Mixer 1 Section -->
+                            <tr class="row-header"><td colspan="35">MIXER 1 (COVER ALL CONTROL PANEL)</td></tr>
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "- LID", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "- BOWL", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "- BLADE", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "- SURROUNDINGS", Freq = "Daily", Level = "3" })
+
+                            <!-- Other Equipments -->
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "TABLE 1", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "OIL PUMP 1", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "TABLE 2", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "TABLE 3", Freq = "Daily", Level = "3" })
+                            
+                            <tr class="row-header"><td colspan="35">BIG MIXER (COVER ALL CONTROL PANEL)</td></tr>
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "- LID", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "- BOWL", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "- BLADE", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "- SURROUNDINGS", Freq = "Daily", Level = "3" })
+
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "TABLE 4", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "OIL PUMP 4", Freq = "Daily", Level = "3" })
+                             @await Html.PartialAsync("_CleaningRow", new { Name = "TABLE - pH checks/ samples table", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "Utensils – Bowls, Spatula", Freq = "Daily", Level = "1" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "Scales", Freq = "Daily", Level = "1" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "MIXING AREA Surroundings", Freq = "Daily", Level = "2" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "Walls & Floors (general clean)", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "Cleaning tools (brush/scrapers/bucket/broom/squeegee)", Freq = "Daily", Level = "2" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "Drains", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "Rubbish Bins", Freq = "Daily", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "Surroundings – Sink/ Shelves", Freq = "Weekly", Level = "3" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "INGREDIENTS SHELVINGS", Freq = "Weekly", Level = "3" })
+
+                            <!-- Fortnightly & Monthly -->
+                            <tr class="row-header" style="background-color: #333 !important; color: white;"><td colspan="35">Fortnightly & Monthly requirement or as per request</td></tr>
+
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "TABLES 1, 2, 3, 4 - Underneath", Freq = "Fortnightly", Level = "2" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "CEILING (Include light fixture)", Freq = "Monthly", Level = "2" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "Plastic Curtain", Freq = "Fortnightly", Level = "2" })
+                             @await Html.PartialAsync("_CleaningRow", new { Name = "Wall (full washdown)", Freq = "Monthly", Level = "2" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "Floors (full washdown)", Freq = "Fortnightly", Level = "2" })
+                            @await Html.PartialAsync("_CleaningRow", new { Name = "Canopy", Freq = "Monthly", Level = "2" })
+                             @await Html.PartialAsync("_CleaningRow", new { Name = "Assessed By:", Freq = "", Level = "" })
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const STORAGE_KEY_PREFIX = 'cleaning_schedule_';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current month/year
+            const now = new Date();
+            const monthStr = now.toISOString().slice(0, 7); // YYYY-MM
+            const monthSelector = document.getElementById('monthSelector');
+            monthSelector.value = monthStr;
+            
+            monthSelector.addEventListener('change', loadData);
+            
+            // Load initial data
+            loadData();
+
+            // Auto-save on change
+            document.querySelectorAll('.cleaning-input').forEach(input => {
+                input.addEventListener('change', saveData);
+            });
+        });
+
+        function getKey() {
+            return STORAGE_KEY_PREFIX + document.getElementById('monthSelector').value;
+        }
+
+        function saveData() {
+            const data = {};
+            document.querySelectorAll('.cleaning-input').forEach(input => {
+                const id = input.getAttribute('data-id');
+                const val = input.value;
+                if (val) {
+                    data[id] = val;
+                }
+            });
+            localStorage.setItem(getKey(), JSON.stringify(data));
+            
+            // Visual feedback
+             const btn = document.getElementById('btnSave');
+             const originalText = btn.innerHTML;
+             btn.innerHTML = '<i class="bi bi-check"></i> Saved!';
+             setTimeout(() => { btn.innerHTML = originalText; }, 1000);
+        }
+
+        function loadData() {
+            // Reset inputs to their default values (from server-side render)
+             document.querySelectorAll('.cleaning-input').forEach(input => {
+                if (input.tagName === 'SELECT') {
+                    // Start with the attribute-defined selected option
+                     Array.from(input.options).forEach(opt => {
+                        if (opt.defaultSelected) input.value = opt.value;
+                    });
+                } else {
+                    input.value = input.defaultValue || '';
+                }
+            });
+
+            const key = getKey();
+            const dataStr = localStorage.getItem(key);
+            if (dataStr) {
+                const data = JSON.parse(dataStr);
+                for (const [id, val] of Object.entries(data)) {
+                    const input = document.querySelector(`.cleaning-input[data-id="${id}"]`);
+                    if (input) {
+                        input.value = val;
+                    }
+                }
+            }
+        }
+        
+        function clearData() {
+            if(confirm('Are you sure you want to clear all data for this month?')) {
+                localStorage.removeItem(getKey());
+                loadData();
+            }
+        }
+    </script>
+}
